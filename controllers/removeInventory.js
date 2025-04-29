@@ -8,9 +8,9 @@ exports.removeInventory = async (req, res) => {
       await wixCMSService.deleteInventory(Listing_Id);
       res.status(200).json({ message: "Inventory removed successfully" });
     } else {
-      res.status(200).json({ message: "Inventory is still active. No action taken." });
+      res.status(200).json({ message: "Inventory still active, no action taken" });
     }
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ message: "Error removing inventory", error: err.message });
   }
 };

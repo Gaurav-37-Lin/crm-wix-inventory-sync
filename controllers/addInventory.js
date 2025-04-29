@@ -23,8 +23,8 @@ exports.addOrUpdateInventory = async (req, res) => {
     };
 
     await wixCMSService.upsertInventory(inventoryData);
-    res.status(200).json({ message: "Inventory added or updated successfully" });
+    res.status(200).json({ message: "Inventory added/updated successfully" });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ message: "Error updating inventory", error: err.message });
   }
 };

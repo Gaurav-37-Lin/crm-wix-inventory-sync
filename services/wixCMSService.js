@@ -12,15 +12,7 @@ exports.upsertInventory = async (data) => {
   };
 
   const payload = {
-    data: {
-      listing_id: data.listing_id,
-      project_name: data.project_name,
-      wing_name: data.wing_name,
-      society_name: data.society_name,
-      configuration: data.configuration,
-      monthly_rent: data.monthly_rent,
-      security_deposit: data.security_deposit
-    },
+    data: data,
     options: {
       replaceAllFields: true
     }
